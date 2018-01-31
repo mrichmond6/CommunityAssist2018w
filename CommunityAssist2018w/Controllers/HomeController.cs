@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using CommunityAssist2018w.Models;
 namespace CommunityAssist2018w.Controllers
 {
     public class HomeController : Controller
     {
+        CommunityAssist2017Entities db = new CommunityAssist2017Entities();
         public ActionResult Index()
         {
-            return View();
+            //var grts = (from g in db.GrantTypes
+                         //select g).ToList();
+            return View(db.GrantTypes.ToList());
         }
 
         public ActionResult About()
