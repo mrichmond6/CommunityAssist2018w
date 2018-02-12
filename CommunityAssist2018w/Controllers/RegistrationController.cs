@@ -23,9 +23,10 @@ namespace CommunityAssist2018w.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public ActionResult RegisterUser([Bind(Include ="LastName, Firstname, Email, Phone, PlainPassword, Apartment, Street, City, State, Zipcode")]NewPerson np)
+        public ActionResult RegisterUser([Bind(Include ="LastName, Firstname, Email, Phone, PlainPassword, " +
+            "Apartment, Street, City, State, Zipcode")]NewPerson np)
         {
-            int result = db.usp_Register(np.LastName, np.FirstName, np.Email, np.Phone, np.PlainPassword, np.Apartment, np.Street, np.City, np.State, np.Zipcode);
+            int result = db.usp_Register(np.LastName, np.FirstName, np.Email, np.PlainPassword, np.Apartment, np.Street, np.City, np.State, np.Zipcode, np.Phone);
             if(result != -1)
             {
                 return RedirectToAction("Index");
