@@ -21,5 +21,6 @@ namespace CommunityAssist2018w.Models
         public Nullable<System.Guid> DonationConfirmationCode { get; set; }
     
         public virtual Person Person { get; set; }
+        public string DonorName { get; internal set; }
     }
 }
