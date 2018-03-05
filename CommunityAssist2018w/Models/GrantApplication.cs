@@ -19,11 +19,15 @@ namespace CommunityAssist2018w.Models
         {
             this.GrantApplicationReviews = new HashSet<GrantApplicationReview>();
         }
-    
+        public int GrantTypeKey { get; set; }
+        public string GrantTypeName { get; set; }
+        public string GrantTypeDescription { get; set; }
+        public decimal GrantTypemaximum { get; set; }
+        public decimal GrantTypeLifetimeMaximum { get; set; }
+        public Nullable<System.DateTime> GrantTypeDateEntered { get; set; }
         public int GrantApplicationKey { get; set; }
         public Nullable<int> PersonKey { get; set; }
         public Nullable<System.DateTime> GrantAppicationDate { get; set; }
-        public Nullable<int> GrantTypeKey { get; set; }
         public decimal GrantApplicationRequestAmount { get; set; }
         public string GrantApplicationReason { get; set; }
         public Nullable<int> GrantApplicationStatusKey { get; set; }
